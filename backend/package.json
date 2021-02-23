@@ -1,0 +1,19 @@
+{
+  "name": "pro-code",
+  "version": "0.0.0",
+  "description": "Projeto TCC unisal campinas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/group-procode/probook-dev.git"
+  },
+  "author": "pro-code",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/group-procode/probook-dev/issues"
+  },
+  "homepage": "https://github.com/group-procode/probook-dev#readme"
+}
