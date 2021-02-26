@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "Projeto TCC unisal campinas",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/group-procode/probook-dev/issues"
   },
-  "homepage": "https://github.com/group-procode/probook-dev#readme"
+  "homepage": "https://github.com/group-procode/probook-dev#readme",
+  "dependencies": {
+    "@babel/cli": "^7.13.0",
+    "@babel/core": "^7.13.1",
+    "@babel/preset-env": "^7.13.5",
+    "knex": "^0.21.18",
+    "pg": "^8.5.1"
+  },
+  "devDependencies": {}
 }
