@@ -1,14 +1,19 @@
 // Update with your config settings.
+import dotenv from "dotenv";
+
+dotenv.config();
+
+console.log(process.env.PG_PASSWORD);
 
 module.exports = {
   development: {
-    client: 'postgresql',
+    client: "pg",
+    version: "^8.5.1",
     connection: {
-      database: "d649gr3avmaif6",
-      user: "jvwgnajtjuyhud",
-      password: "26c2946448e02fbe98ef654b6ef80ac5e37f732fa619ae5c0ccb1c60d6c4aa8c"
-    }
-  }
-}
-
-
+      host: process.env.PG_HOST,
+      database: process.env.PG_DATABASE,
+      user: process.env.PG_USER,
+      password: process.env.PG_PASSWORD,
+    },
+  },
+};
