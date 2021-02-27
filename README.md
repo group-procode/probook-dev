@@ -6,3 +6,11 @@
 
 ## Instalar projeto backend
 - Ao clonar backend, executar ``npm install`` (linha de comando) dentro da pasta backend
+- Criar na raiz do backend um arquivo ``.env`` contendo todas as variaveis de ambientes presentes no codigo
+  São elas:
+  - PG_HOST=[host]
+  - PG_USER=[usuario]
+  - PG_PASSWORD=[senha]
+  - PG_DATABASE=[banco de dados]
+  - PG_CONNECTION_STRING=[string de conexão]
+  - JWT_SECRET=[senha jwt]
