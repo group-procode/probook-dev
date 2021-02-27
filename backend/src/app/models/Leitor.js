@@ -1,10 +1,18 @@
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+// TODO: pesquisar uma forma de remover essa variavel
 
 import connectionDb from "../../config/database.js";
 import bcrypt from "bcryptjs";
 
-// Classe da tabela curso com todas funcionalidades relacionadas ao DB
+/**
+ * Classe da tabela curso com todas funcionalidades relacionadas ao DB
+ */
 class Leitor {
+  /**
+   * Cadastra um novo leitor na base de dados
+   *
+   * @param {*novoLeitor} novoLeitor leitor a ser cadastrado.
+   */
   async cadastraLeitor(novoLeitor) {
     // Criptografando a senha para salvar no banco com seguranca
     novoLeitor.senha = bcrypt.hashSync(
@@ -25,6 +33,18 @@ class Leitor {
       })
       .returning(["ra"]);
   }
+
+  /**
+   * Verifica no banco se ja existe um leitor com um ra especifico
+   *
+   * @param {*} ra ra do leitor.
+   */
+  async encontraLeitorPorRa(ra) {
+    return await connectionDb("leitor")
+      .where({ ra: ra })
+      .first()
+      .then((leitor) => leitor);
+  }
 }
 
-export default new Leitor();
+export default Leitor;
