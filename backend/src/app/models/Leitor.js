@@ -39,9 +39,7 @@ class Leitor {
    */
 
   async verificaSenha(senhaHash,senha){
-
-    const check =await bcrypt.compare(senha,senhaHash)
-    return check
+    return await bcrypt.compare(senha,senhaHash);
   }
 
   /**
