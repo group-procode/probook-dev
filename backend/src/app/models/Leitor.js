@@ -35,6 +35,16 @@ class Leitor {
   }
 
   /**
+   * Verificador De Senhas
+   */
+
+  async verificaSenha(senhaHash,senha){
+
+    const check =await bcrypt.compare(senha,senhaHash)
+    return check
+  }
+
+  /**
    * Verifica no banco se ja existe um leitor com um ra especifico
    *
    * @param {*} ra ra do leitor.

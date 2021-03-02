@@ -30,4 +30,33 @@ router.post("/cad", async (req, res) => {
   }
 });
 
+router.post('/login', async(req,res)=>{
+    const leitor = new Leitor();
+    const dados = req.body
+    
+    const leitorExiste = await leitor.encontraLeitorPorRa(dados.ra);
+
+    if(!leitorExiste){
+      return res.status("404").json({ erro: "Leitor não encontrado" });
+    }else{
+      try{
+        const senhaCompara =await leitor.verificaSenha(leitorExiste.senha,dados.senha)
+        
+        if(!senhaCompara){
+          return res.status("401").json({erro:"Senha incompativeis"});
+        }else{
+          const token = jwt.sign(dados, process.env.JWT_SECRET);
+          return res.status("200").json({
+            success:"Leitor e Senha compativeis",
+            token:token
+          });
+        }
+      }catch(err){
+        return res.status("500").json({erro:res})
+      }
+    }
+
+});
+
+
 export default router;
