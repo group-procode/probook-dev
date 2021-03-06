@@ -3,6 +3,10 @@
 
 ## Instalar projeto mobile
 - Ao clonar mobile, executar ``npm install`` (linha de comando) dentro da pasta mobile
+- Criar na raiz do mobile um arquivo ``.env`` contendo todas as variaveis de ambientes presentes no codigo
+  São elas:
+  - API_URL = [http://"seu_ip":5000/]
+  
 
 ## Instalar projeto backend
 - Ao clonar backend, executar ``npm install`` (linha de comando) dentro da pasta backend
