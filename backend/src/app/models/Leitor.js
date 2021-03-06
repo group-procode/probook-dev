@@ -1,7 +1,7 @@
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 // TODO: pesquisar uma forma de remover essa variavel
 
-import connectionDb from "../../config/database.js";
+import conexaoDb from "../../config/database.js";
 import bcrypt from "bcryptjs";
 
 /**
@@ -20,7 +20,7 @@ class Leitor {
       bcrypt.genSaltSync(10),
     );
 
-    return await connectionDb("leitor")
+    return await conexaoDb("leitor")
       .insert({
         ra: novoLeitor.ra,
         nome: novoLeitor.nome,
@@ -38,8 +38,8 @@ class Leitor {
    * Verificador De Senhas
    */
 
-  async verificaSenha(senhaHash,senha){
-    return await bcrypt.compare(senha,senhaHash);
+  async verificaSenha(senhaHash, senha) {
+    return await bcrypt.compare(senha, senhaHash);
   }
 
   /**
@@ -48,7 +48,7 @@ class Leitor {
    * @param {*} ra ra do leitor.
    */
   async encontraLeitorPorRa(ra) {
-    return await connectionDb("leitor")
+    return await conexaoDb("leitor")
       .where({ ra: ra })
       .first()
       .then((leitor) => leitor);

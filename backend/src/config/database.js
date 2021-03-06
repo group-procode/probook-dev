@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const connectionDb = knex({
+const conexaoDb = knex({
   client: "pg",
   connection: {
     host: process.env.PG_HOST,
@@ -14,4 +14,4 @@ const connectionDb = knex({
   },
 });
 
-export default connectionDb;
+export default conexaoDb;
