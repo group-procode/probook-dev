@@ -56,5 +56,16 @@ router.post('/login', async (req, res) => {
 
 });
 
+router.get('/faculdades', async(req,res)=>{
+  const leitor = new Leitor();
+  try{
+    const faculdades = await leitor.listaFaculdades();
+    return res.status("200").json({faculdades})
+  }catch(err){
+    return res.status("500").json({erro:err})
+  }
+  
+})
+
 
 export default router;

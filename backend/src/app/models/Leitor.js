@@ -53,6 +53,10 @@ class Leitor {
       .first()
       .then((leitor) => leitor);
   }
+
+  async listaFaculdades(){
+    return await conexaoDb("faculdades").first().then((faculdades)=>faculdades)
+  }
 }
 
 export default Leitor;
