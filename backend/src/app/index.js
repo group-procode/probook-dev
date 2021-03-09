@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import leitorController from "./controllers/leitorController.js";
 
-// Responsavel por pegar as variaveis de ambiente
+// Responsável por pegar as variáveis de ambiente
 dotenv.config();
 
 const app = express();
@@ -16,4 +16,4 @@ app.use(bodyParser.json());
 app.use("/leitor", leitorController);
 
 // Inicia o servidor na porta 5000
-app.listen(5000, () => console.log("Aplicacao esta no ar..."));
+app.listen(5000, () => console.log("Aplicação está no ar..."));

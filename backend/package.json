@@ -1,7 +1,7 @@
 {
-  "name": "pro-code",
+  "name": "procode",
   "version": "0.0.0",
-  "description": "Projeto TCC unisal campinas",
+  "description": "Projeto Integrador: PRObook | UNISAL",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/group-procode/probook-dev.git"
   },
-  "author": "pro-code",
+  "author": "procode",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/group-procode/probook-dev/issues"
