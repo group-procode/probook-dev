@@ -1,20 +1,20 @@
-import api from '../providers/ProbookApi'
+import api from '../providers/ProbookApi';
 
 class Leitor {
     /**
-     * 
-     * @param {*} dadosLeitor 
+     *
+     * @param {*} dadosLeitor
      */
-    async cadastrarLeitor(dadosLeitor) {
-        return await api.post('/leitor/cad', dadosLeitor)
+    static async cadastrarLeitor(dadosLeitor) {
+        return await api.post('/leitor/cad', dadosLeitor);
     }
 
     /**
-     * 
-     * @param {*} credenciais 
+     *
+     * @param {*} credenciais
      */
-    async login(credenciais) {
-        return await api.post('/leitor/login', credenciais)
+    static async login(credenciais) {
+        return await api.post('/leitor/login', credenciais);
     }
 }
 
