@@ -1,4 +1,6 @@
-// Update with your config settings.
+/**
+ * Arquivo para configuração de conexão com banco de dados.
+ */
 import dotenv from "dotenv";
 
 dotenv.config();
