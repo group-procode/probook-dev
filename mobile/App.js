@@ -1,21 +1,30 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, KeyboardAvoidingView, Text } from 'react-native';
+import Cadastro from './src/telas/Cadastro';
+import { useFonts, Amaranth_400Regular } from '@expo-google-fonts/amaranth';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    let [fontsLoaded] = useFonts({
+        Amaranth_400Regular,
+    });
+
+    if (!fontsLoaded) {
+        return <Text>Wait</Text>;
+    }
+
+    return (
+        <KeyboardAvoidingView style={styles.fundo}>
+            <StatusBar style="auto" />
+            <Cadastro />
+        </KeyboardAvoidingView>
+    );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    fundo: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
 });
