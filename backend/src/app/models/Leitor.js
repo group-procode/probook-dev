@@ -53,6 +53,39 @@ class Leitor {
       .first()
       .then((leitor) => leitor);
   }
+
+  /**
+  * Encontra Leitor por email
+  *
+  * @param {*} email email do leitor.
+  */
+  async encontraLeitorPorEmail(email) {
+    return await conexaoDb("leitor")
+      .where({ e_mail: email })
+      .first()
+      .then((leitor) => leitor)
+
+  }
+
+  /**
+  * Redefini senha do leitor
+  *
+  * @param {*} novaSenha nova senha
+  */
+  async redefinirSenha(novaSenha, ra) {
+    // Criptografando a senha para salvar no banco com seguranca
+    novaSenha = bcrypt.hashSync(
+      novaSenha,
+      bcrypt.genSaltSync(10),
+    );
+
+    return await conexaoDb("leitor")
+      .update({ senha: novaSenha })
+      .where({ ra: ra })
+      .then((leitor) => leitor)
+
+  }
+
 }
 
 export default Leitor;
