@@ -1,4 +1,7 @@
 mobile/node_modules
+mobile/.env
+mobile/.vscode
+mobile/.expo*
+backend/node_modules
 backend/.env
 backend/.vscode
-backend/node_modules
