@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, KeyboardAvoidingView, Text } from 'react-native';
 import Cadastro from './src/telas/Cadastro';
+import Emprestimo from './src/telas/Emprestimo';
 import { useFonts, Amaranth_400Regular } from '@expo-google-fonts/amaranth';
 
 export default function App() {
@@ -16,7 +17,7 @@ export default function App() {
     return (
         <KeyboardAvoidingView style={styles.fundo}>
             <StatusBar style="auto" />
-            <Cadastro />
+            <Emprestimo />
         </KeyboardAvoidingView>
     );
 }
